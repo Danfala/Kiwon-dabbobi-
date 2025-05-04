@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuntubi Likita</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #008080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background-color: #20B2AA;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #008080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #008080;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tuntubi Likitan Dabbobi</h1>
+    <p>Cika fom ɗin da ke ƙasa don tura saƙo ta WhatsApp</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Gida</a>
+    <a href="shanu.html">Shanu</a>
+    <a href="kaji.html">Kaji</a>
+    <a href="awaki.html">Awaki</a>
+    <a href="tumaki.html">Tumaki</a>
+    <a href="tuntubi.html">Tuntubi Likita</a>
+  </nav>
+
+  <div class="container">
+    <form onsubmit="sendToWhatsApp(); return false;">
+      <label for="suna">Suna:</label>
+      <input type="text" id="suna" name="suna" placeholder="Shigar da sunanka" required>
+
+      <label for="imel">Imel (ko lambar waya):</label>
+      <input type="text" id="imel" name="imel" placeholder="Shigar da imel ko waya" required>
+
+      <label for="dabba">Irin dabbar:</label>
+      <input type="text" id="dabba" name="dabba" placeholder="Misali: Shanu, Awaki, Kaji..." required>
+
+      <label for="sako">Sako / Tambaya:</label>
+      <textarea id="sako" name="sako" rows="5" placeholder="Shigar da tambayarka ko bayani" required></textarea>
+
+      <button type="submit">Tura Saƙo</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 Muazu Abubakar Muazu. Duk haƙƙi na mallaka.</p>
+  </footer>
+
+  <script>
+    function sendToWhatsApp() {
+      const suna = document.getElementById("suna").value;
+      const imel = document.getElementById("imel").value;
+      const dabba = document.getElementById("dabba").value;
+      const sako = document.getElementById("sako").value;
+
+      const message = `Suna: ${suna}%0AImel/Lambar waya: ${imel}%0ADabba: ${dabba}%0ASako: ${sako}`;
+      
+      // SAUYA WANNAN LAMBA da naka
+      const phoneNumber = "2348128681912"; // misali: 2348030001122
+
+      const url = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
